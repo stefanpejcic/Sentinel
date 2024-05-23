@@ -2,6 +2,7 @@
 Description=Sentinel Monitoring Service
 Documentation=Monitor server health and receive alerts.
 After=network.target
+WantedBy=multi-user.target
 
 # Usage:
 # sudo systemctl start sentinel.service  - Start the sentinel service
@@ -12,10 +13,8 @@ After=network.target
 # sudo systemctl disable sentinel.service - Disable the service
 
 [Service]
-ExecStart=/usr/local/bin/sentinel.sh
+ExecStart=/usr/local/sentinel/sentinel.sh %i
 Type=oneshot
-Restart=always
-User=root
 
 [Install]
 WantedBy=multi-user.target
