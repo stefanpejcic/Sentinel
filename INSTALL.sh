@@ -1,16 +1,10 @@
 #!/bin/bash
 
-# setup service
-cp sentinel.timer /etc/systemd/system/sentinel.timer
-cp sentinel.service /etc/systemd/system/sentinel.service
-
-
-
-
-
 
 
 # copy files
+cp sentinel.service /etc/systemd/system/sentinel.service
+
 cp sentinel.sh /usr/local/sentinel/sentinel.sh
 sudo chmod +x /usr/local/sentinel/sentinel.sh
 
