@@ -13,6 +13,7 @@ After=network.target
 
 [Service]
 ExecStart=/usr/local/bin/sentinel.sh
+Type=oneshot
 Restart=always
 User=root
 
