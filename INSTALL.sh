@@ -26,10 +26,47 @@ systemctl start login_check.timer
 systemctl start dos_protection.timer
 
 
-# verify
-sudo systemctl status on_reboot.timer
-sudo systemctl status service_status.timer
-sudo systemctl status resource_usage.timer
-sudo systemctl status login_check.timer
-sudo systemctl status dos_protection
+
+# verify service and timers
+if sudo systemctl is-active --quiet on_reboot.timer; then
+    echo "on_reboot.timer is active"
+else
+    echo "on_reboot.timer is not active"
+    echo "To manually create and start on_reboot.timer, run:"
+    echo "sudo cp service/timers/on_reboot.timer /etc/systemd/system/on_reboot.timer && sudo systemctl enable --now on_reboot.timer"
+fi
+
+if sudo systemctl is-active --quiet service_status.timer; then
+    echo "service_status.timer is active"
+else
+    echo "service_status.timer is not active"
+    echo "To manually create and start service_status.timer, run:"
+    echo "sudo cp service/timers/service_status.timer /etc/systemd/system/service_status.timer && sudo systemctl enable --now service_status.timer"
+fi
+
+if sudo systemctl is-active --quiet resource_usage.timer; then
+    echo "resource_usage.timer is active"
+else
+    echo "resource_usage.timer is not active"
+    echo "To manually create and start resource_usage.timer, run:"
+    echo "sudo cp service/timers/resource_usage.timer /etc/systemd/system/resource_usage.timer && sudo systemctl enable --now resource_usage.timer"
+fi
+
+if sudo systemctl is-active --quiet login_check.timer; then
+    echo "login_check.timer is active"
+else
+    echo "login_check.timer is not active"
+    echo "To manually create and start login_check.timer, run:"
+    echo "sudo cp service/timers/login_check.timer /etc/systemd/system/login_check.timer && sudo systemctl enable --now login_check.timer"
+fi
+
+if sudo systemctl is-active --quiet dos_protection.timer; then
+    echo "dos_protection.timer is active"
+else
+    echo "dos_protection.timer is not active"
+    echo "To manually create and start dos_protection.timer, run:"
+    echo "sudo cp service/timers/dos_protection.timer /etc/systemd/system/dos_protection.timer && sudo systemctl enable --now dos_protection.timer"
+fi
+
+
 
