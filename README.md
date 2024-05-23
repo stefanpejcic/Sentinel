@@ -26,8 +26,8 @@ Resource usage monitoring:
 
 By default, Sentinel will record the incidents only on log on the server itself. However, you can configure email alerts or integrate third-party tools like telegraf.
 
-- OpenAdmim alerts - if server is running OpenPanel, then alerts will automatically appear in OpenAdmin Notifications.
-- Email alerts - can be enabled in the config.
+- [OpenAdmim alerts](https://community.openpanel.co/d/13-introducing-notifications-center) - if server is running OpenPanel, then alerts will automatically appear in OpenAdmin Notifications.
+- [Email alerts](https://openpanel.co/docs/changelog/0.1.6/#email-alerts) - can be enabled in the config.
 - Telegraf - soon
 
 
