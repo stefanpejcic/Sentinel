@@ -29,7 +29,7 @@ systemctl start dos_protection.timer
 
 # verify service and timers
 if sudo systemctl is-active --quiet on_reboot.timer; then
-    echo "on_reboot.timer is active"
+    echo "✔ on_reboot.timer is active"
 else
     echo "on_reboot.timer is not active"
     echo "To manually create and start on_reboot.timer, run:"
@@ -37,7 +37,7 @@ else
 fi
 
 if sudo systemctl is-active --quiet service_status.timer; then
-    echo "service_status.timer is active"
+    echo "✔ service_status.timer is active"
 else
     echo "service_status.timer is not active"
     echo "To manually create and start service_status.timer, run:"
@@ -45,7 +45,7 @@ else
 fi
 
 if sudo systemctl is-active --quiet resource_usage.timer; then
-    echo "resource_usage.timer is active"
+    echo "✔ resource_usage.timer is active"
 else
     echo "resource_usage.timer is not active"
     echo "To manually create and start resource_usage.timer, run:"
@@ -53,7 +53,7 @@ else
 fi
 
 if sudo systemctl is-active --quiet login_check.timer; then
-    echo "login_check.timer is active"
+    echo "✔ login_check.timer is active"
 else
     echo "login_check.timer is not active"
     echo "To manually create and start login_check.timer, run:"
