@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+mkdir -p /usr/local/sentinel/
 
 # copy files
 cp sentinel.service /etc/systemd/system/sentinel.service
@@ -8,12 +8,8 @@ cp sentinel.service /etc/systemd/system/sentinel.service
 cp sentinel.sh /usr/local/sentinel/sentinel.sh
 sudo chmod +x /usr/local/sentinel/sentinel.sh
 
-cp service/timers/on_reboot.timer /etc/systemd/system/on_reboot.timer
-cp service/timers/service_status.timer /etc/systemd/system/service_status.timer
-cp service/timers/resource_usage.timer /etc/systemd/system/resource_usage.timer
-cp service/timers/login_check.timer /etc/systemd/system/login_check.timer
-cp service/timers/dos_protection.timer /etc/systemd/system/dos_protection.timer
-
+cp -r service/timers/ /etc/systemd/system/
+cp -r scripts/ /usr/local/sentinel/
 
 
 
