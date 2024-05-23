@@ -1,0 +1,20 @@
+[Unit]
+Description=Sentinel Monitoring Service
+Documentation=Monitor server health and receive alerts.
+After=network.target
+
+# Usage:
+# sudo systemctl start sentinel.service  - Start the sentinel service
+# sudo systemctl stop sentinel.service   - Stop the sentinel service
+# sudo systemctl status sentinel.service - Display the status of the sentinel service
+# sudo systemctl restart sentinel.service - Restart the sentinel service
+# sudo systemctl enable sentinel.service - Enable the service to start on boot
+# sudo systemctl disable sentinel.service - Disable the service
+
+[Service]
+ExecStart=/usr/local/bin/sentinel.sh
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
