@@ -6,26 +6,24 @@ mkdir -p /usr/local/sentinel/
 cp sentinel.service /etc/systemd/system/sentinel.service
 
 cp sentinel.sh /usr/local/sentinel/sentinel.sh
-sudo chmod +x /usr/local/sentinel/sentinel.sh
-
 cp -r service/timers/ /etc/systemd/system/
 cp -r scripts/ /usr/local/sentinel/
-
+chmod +x /usr/local/sentinel/*.sh
 
 
 # start service and timers
-sudo systemctl daemon-reload
-sudo systemctl enable on_reboot.timer
-sudo systemctl enable service_status.timer
-sudo systemctl enable resource_usage.timer
-sudo systemctl enable login_check.timer
-sudo systemctl enable dos_protection.timer
+systemctl daemon-reload
+systemctl enable on_reboot.timer
+systemctl enable service_status.timer
+systemctl enable resource_usage.timer
+systemctl enable login_check.timer
+systemctl enable dos_protection.timer
 
-sudo systemctl start on_reboot.timer
-sudo systemctl start service_status.timer
-sudo systemctl start resource_usage.timer
-sudo systemctl start login_check.timer
-sudo systemctl start dos_protection.timer
+systemctl start on_reboot.timer
+systemctl start service_status.timer
+systemctl start resource_usage.timer
+systemctl start login_check.timer
+systemctl start dos_protection.timer
 
 
 # verify
