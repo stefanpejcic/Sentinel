@@ -1,1 +1,12 @@
 
+[Unit]
+Description=Run swap script every 10 minutes
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=10min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+  
