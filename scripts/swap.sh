@@ -8,24 +8,6 @@ SWAP_THRESHOLD=${SWAP_THRESHOLD:-40}
 is_valid_number "$SWAP_THRESHOLD" || SWAP_THRESHOLD=40
 HOSTNAME=$(hostname)
 
-
-check_system_load() {
-  local title="High System Load!"
-
-  local current_load=$(uptime | awk -F'average:' '{print $2}' | awk -F', ' '{print $1}')
-  local load_int=${current_load%.*}  # Extract the integer part
-  
-  if [ "$load_int" -gt "$LOAD_THRESHOLD" ]; then
-    echo "Average Load usage ($load_int) is higher than treshold value ($LOAD_THRESHOLD). Writing notification."
-    write_notification "$title" "Current load: $current_load"
-  else
-    echo "System load is within acceptable limits."
-    echo "Current Load usage $current_load is lower than the treshold value $LOAD_THRESHOLD. Skipping."
-  fi
-}
-
-
-
 swap_healing() {
     local title="SWAP usage alert!"
     SWAP_USAGE=$(free -t | awk 'FNR == 3 {print $3/$2*100}')
