@@ -1,0 +1,19 @@
+#!/bin/bash
+
+source helpers/main.sh
+
+#
+
+ATTACK=$(awk -F'=' '/^attack/ {print $2}' "$INI_FILE")
+ATTACK=${ATTACK:-yes}
+[[ "$ATTACK" =~ ^(yes|no)$ ]] || ATTACK=yes
+
+LIMIT=$(awk -F'=' '/^limit/ {print $2}' "$INI_FILE")
+LIMIT=${LIMIT:-yes}
+[[ "$LIMIT" =~ ^(yes|no)$ ]] || LIMIT=yes
+
+BACKUP=$(awk -F'=' '/^backup/ {print $2}' "$INI_FILE")
+BACKUP=${BACKUP:-yes}
+[[ "$BACKUP" =~ ^(yes|no)$ ]] || BACKUP=yes
+
+
