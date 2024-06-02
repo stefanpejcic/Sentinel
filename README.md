@@ -1,6 +1,9 @@
 # Sentinel
 Monitoring service for Linux and OpenPanel
 
+~[sentinel logo](assets/sentinel.svg)
+
+
 ## Features
 
 Sentinel is a set-and-forget service that you can install on Ubuntu and it will monitor system services and resource usage.
