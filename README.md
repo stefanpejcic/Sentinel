@@ -1,7 +1,7 @@
 # Sentinel
 Monitoring service for Linux and OpenPanel
 
-![sentinel logo](assets/sentinel.svg)
+![sentinel-logo](assets/sentinel.svg)
 
 
 ## Features
