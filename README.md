@@ -20,7 +20,7 @@ Examples include:
 It supports:
 
 Resource usage monitoring:
-- **Resource usage** - ram, cpu and disk usage
+- **Resource usage** - ram, cpu, swap and disk usage
 - **DoS** - synflood connections, xmlrpc bruteforce
 - **Failed services** - nginx, mysql, ufw..
 - **Logins** - get notifications of new logins
