@@ -1,5 +1,7 @@
 # Sentinel
-Monitoring service for Linux and OpenPanel
+POC Monitoring service for Linux and OpenPanel
+
+TODO: integrate pytorch and collect data from servers
 
 ![sentinel-logo](assets/sentinel.svg)
 
