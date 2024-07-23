@@ -5,7 +5,7 @@ SCRIPT_DIR="/usr/local/sentinel"
 
 case "$1" in
     on_reboot)
-        $SCRIPT_DIR/on_reboot.sh
+        . on_reboot.sh
         ;;
     service_status)
         $SCRIPT_DIR/service_status.sh
